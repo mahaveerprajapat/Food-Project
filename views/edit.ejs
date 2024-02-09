@@ -1,0 +1,41 @@
+<%- include("includes/head.ejs") %>
+<%- include("includes/header.ejs") %>
+
+<body>
+        
+        
+            <div class="w-50" style="margin-left: 27rem; margin-top: 5rem; margin-bottom: 3rem;">
+
+                <form method="post" action="/items/<%= item._id  %>?_method=put">
+                    <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" value="<%= item.name  %>">
+                  <div id="emailHelp" class="form-text">Name is required</div>
+                </div>
+                <div class="mb-3">
+                  <label for="price" class="form-label">Price</label>
+                  <input type="number" class="form-control" id="price" name="price" value = "<%= item.price %>">
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">category</label>
+                    <input type="text" class="form-control" id="category" name="category" value="<%= item.category %>">
+                  </div>
+                  <div class="mb-3">
+                    <label for="origin" class="form-label">Origin</label>
+                    <input type="text" class="form-control" id="origin" name="origin" value="<%= item.origin %>">
+                  </div>
+
+                  
+                  <div class="mb-3">
+                    <label for="description" class="form-label">description</label>
+                    <textarea class="form-control" id="description" rows="3" name="description"><%= item.description %></textarea>
+                  </div>
+                <button class="btn btn-primary">edit Details</button>
+            </form>
+        </div>
+
+
+        <%- include("includes/footer.ejs") %>
+
+</body>
+</html>
